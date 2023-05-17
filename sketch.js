@@ -17,10 +17,21 @@ function Draw(){
 
     background(220);//Limpa o pano de fundo e define sua cor
     if(gameOver==false){
+        passaro.velocityY=passaro.velocityY+0.5
 
+        //Faz pássaro pular ao apertar a tecla espaço:
+        if(keyDown("space")){
+            passaro.velocityY=-10;
+        }
+        if(passaro.y>height){
+            gameOver=true;
+        }
     }else{
-
+        //Moatra Game Over na tela
+        textSize();
+        text("Game Over", 400,350);
     }
     drawSprites();//Desenha os sprites na tela;
+    
 }
 
