@@ -26,10 +26,17 @@ function Draw(){
         if(passaro.y>height){
             gameOver=true;
         }
+        if(passaro.y<0){
+            gameOver=true;
+        }
+
     }else{
-        //Moatra Game Over na tela
+        //Congela o pássaro na tela:
+        passaro.velocityY=0;
+        
+        //Mostra Game Over na tela
         textSize();
-        text("Game Over", 400,350);
+        text("Game Over", 400,350); 
     }
     drawSprites();//Desenha os sprites na tela;
     
